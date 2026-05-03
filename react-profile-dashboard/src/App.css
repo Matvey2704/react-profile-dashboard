@@ -1,0 +1,406 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #ffffff;
+  color: #111111;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.profilePage {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px minmax(520px, 1fr) 300px;
+  grid-template-areas:
+    "topbar topbar topbar"
+    "sidebar content partners";
+  gap: 40px 56px;
+  align-items: start;
+  padding: 40px 90px 96px;
+}
+
+.topbar {
+  grid-area: topbar;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 20px;
+}
+
+.topbar strong {
+  font-size: 22px;
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbarActions input {
+  width: 320px;
+  border: 0;
+  border-radius: 999px;
+  padding: 13px 18px;
+  background: #f1f1f1;
+  outline: none;
+}
+
+.topbarActions button,
+.walletCard button,
+.listingActions button {
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 16px;
+  background: #ef4444;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+  min-width: 0;
+}
+
+.partnersPanel {
+  grid-area: partners;
+}
+
+.sidebar,
+.partnersPanel {
+  position: sticky;
+  top: 24px;
+}
+
+.profileCard {
+  display: grid;
+  gap: 14px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #f1f1f1;
+  color: rgba(17, 17, 17, 0.25);
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.profileCard h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+}
+
+.profileCard p,
+.contentHeader p,
+.listingCard p,
+.emptyState p {
+  margin: 0;
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating span {
+  color: #ef4444;
+  font-size: 13px;
+}
+
+.rating small {
+  color: rgba(17, 17, 17, 0.45);
+}
+
+.walletCard {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 14px 18px;
+  border-radius: 22px;
+  background: #f1f1f1;
+}
+
+.walletCard span {
+  display: block;
+  margin-bottom: 4px;
+  color: rgba(17, 17, 17, 0.35);
+  font-size: 13px;
+}
+
+.walletCard button {
+  align-self: center;
+}
+
+.sideMenu {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sideMenu a {
+  padding: 4px 0;
+  color: #111111;
+  text-decoration: none;
+}
+
+.sideMenu .active {
+  font-weight: 700;
+}
+
+.contentHeader {
+  margin-bottom: 18px;
+}
+
+.contentHeader h1 {
+  margin: 0 0 8px;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stats div {
+  padding: 18px;
+  border-radius: 22px;
+  background: #f7f7f7;
+}
+
+.stats span {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(17, 17, 17, 0.45);
+  font-size: 14px;
+}
+
+.stats strong {
+  font-size: 24px;
+}
+
+.tabs {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 18px;
+}
+
+.tabs button {
+  border: 0;
+  padding: 0 0 8px;
+  background: transparent;
+  color: rgba(17, 17, 17, 0.45);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.tabs button.active {
+  border-bottom: 2px solid #111111;
+  color: #111111;
+}
+
+.searchBox {
+  margin-bottom: 24px;
+}
+
+.searchBox input {
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 15px 18px;
+  background: #f1f1f1;
+  outline: none;
+}
+
+.listings {
+  display: grid;
+  gap: 14px;
+  width: 100%;
+}
+
+.listingCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 22px;
+  background: #f7f7f7;
+}
+
+.listingTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.listingTop h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.listingTop span {
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.listingActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.listingActions strong {
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.listingActions button {
+  background: #111111;
+}
+
+.emptyState {
+  padding: 28px;
+  border-radius: 24px;
+  background: #f7f7f7;
+}
+
+.emptyState h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.partnersPanel {
+  padding: 22px;
+  border-radius: 24px;
+  background: #f1f1f1;
+}
+
+.partnersPanel h3 {
+  margin: 0 0 20px;
+  font-size: 18px;
+}
+
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 14px;
+}
+
+.partnerItem {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.partnerItem div {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #ef4444;
+  font-weight: 900;
+}
+
+@media (max-width: 1100px) {
+  .profilePage {
+    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-areas:
+      "topbar topbar"
+      "sidebar content"
+      "partners partners";
+    gap: 32px;
+    padding: 32px 32px 72px;
+  }
+
+  .partnersPanel {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .profilePage {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "topbar"
+      "sidebar"
+      "content"
+      "partners";
+    gap: 28px;
+    padding: 24px 16px 56px;
+  }
+
+  .topbar,
+  .topbarActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .topbarActions input {
+    width: 100%;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .contentHeader h1 {
+    font-size: 28px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs button {
+    font-size: 20px;
+  }
+
+  .listingCard,
+  .listingActions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+button:focus {
+  outline: none;
+}
